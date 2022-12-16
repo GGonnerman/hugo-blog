@@ -1,0 +1,51 @@
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "Gaston's Website"
+theme: "PaperModX"
+
+enableRobotsTXT: "true"
+buildDrafts: "false"
+buildFuture: "false"
+buildExpired: "false"
+
+params:
+  homeInfoParams:
+    Title: "Hey there!"
+    Content: "Welcome to my blog!"
+  socialIcons:
+    - name: "github-simple"
+      url: "https://github.com/ggonnerman"
+    - name: "rss-simple"
+      url: "/posts/index.xml"
+  cover:
+    linkFullImages: "true"
+  ShowToc: "true" # Make table of contents visible
+  TocOpen: "true" # Automatically open table of contents
+  TocSide: "left" # Put table of contents on left if screen is large enough
+  ShowBreadCrumbs: true # Show the path to each page
+  comments: false # TODO: Add layouts/partial/comments.html to support comments
+  fuseOpts:
+    isCaseSensitive: "false"
+    shouldSort: "true" # Sort by best match
+    threshold: 0.1 # Require really strong match
+    minMatchCharLength: 1
+    includeMatches: "true" # Return matches (potentially helpful for preview)
+    ignoreLocation: "true" # Do not care about where in the post the match is found
+    keys: ["title", "permalink", "summary", "content"] # The order to search for match
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifier: "archives"
+      name: "Archives"
+      url: "/archives/"
+      weight: 0
+    - identifier: "search"
+      name: "Search"
+      url: "/search/"
+      weight: 10
